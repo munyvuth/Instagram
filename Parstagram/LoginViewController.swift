@@ -19,18 +19,6 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        var currentUser = PFUser.current()
-        if currentUser != nil {
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-        } else {
-            usernameField.text = ""
-            passwordField.text = ""
-        }
-    }
-    
     
     @IBAction func onLogin(_ sender: Any) {
         let username = usernameField.text!
